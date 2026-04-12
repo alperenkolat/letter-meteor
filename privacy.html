@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LetterMeteor Gizlilik Politikası</title>
+  <meta name="description" content="LetterMeteor gizlilik politikası ve veri kullanımı özeti.">
+  <style>
+    :root {
+      --bg: #f3f7fb;
+      --panel: rgba(255,255,255,0.94);
+      --text: #182235;
+      --muted: #516079;
+      --line: rgba(24,34,53,0.10);
+      --blue: #1976ff;
+      --teal: #0f9d8b;
+      --gold: #f5b700;
+      --shadow: 0 24px 60px rgba(18,34,53,0.10);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(25,118,255,0.10), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(15,157,139,0.10), transparent 24%),
+        linear-gradient(180deg, #f7fbff 0%, var(--bg) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 18px 72px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(24,34,53,0.86);
+    }
+
+    .meteor {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #ff8a00);
+      box-shadow: 0 0 0 6px rgba(245,183,0,0.12);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link,
+    .button,
+    .button-secondary {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.72);
+      color: rgba(24,34,53,0.88);
+      font-weight: 700;
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+    }
+
+    .nav-link:hover,
+    .button:hover,
+    .button-secondary:hover {
+      transform: translateY(-1px);
+      border-color: rgba(24,34,53,0.16);
+      background: #fff;
+    }
+
+    .hero,
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      padding: 28px;
+      margin-bottom: 18px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 88% 18%, rgba(25,118,255,0.08), transparent 20%),
+        radial-gradient(circle at 0% 0%, rgba(15,157,139,0.10), transparent 22%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(24,34,53,0.05);
+      border: 1px solid rgba(24,34,53,0.08);
+      color: rgba(24,34,53,0.56);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin: 0; }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(30px, 6vw, 50px);
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      max-width: 740px;
+      margin-top: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 16px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 22px;
+    }
+
+    .button {
+      background: linear-gradient(180deg, rgba(25,118,255,0.10), rgba(25,118,255,0.05));
+      border-color: rgba(25,118,255,0.18);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .section {
+      padding: 22px;
+    }
+
+    .section h2 {
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(24,34,53,0.52);
+      margin-bottom: 12px;
+    }
+
+    .card-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .item {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: rgba(24,34,53,0.03);
+      border: 1px solid rgba(24,34,53,0.06);
+    }
+
+    .item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .item span,
+    .muted {
+      color: var(--muted);
+      line-height: 1.7;
+      font-size: 14px;
+    }
+
+    .full {
+      grid-column: 1 / -1;
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: rgba(24,34,53,0.46);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="nav" aria-label="Site">
+      <a class="brand" href="./index.html">
+        <span class="meteor" aria-hidden="true"></span>
+        <span>LetterMeteor</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="./index.html">Ana Sayfa</a>
+        <a class="nav-link" href="./support.html">Destek</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow">Gizlilik</div>
+      <h1>Veri kullanımını sade ve şeffaf tutuyoruz</h1>
+      <p>LetterMeteor şu an tek oyunculu, iPhone odaklı bir kelime oyunudur. Mevcut uygulama davranışına göre hesap oluşturma, reklam takibi veya üçüncü taraf kullanıcı profilleme akışı içermez.</p>
+      <div class="hero-actions">
+        <a class="button" href="./support.html">Destek Sayfası</a>
+        <a class="button-secondary" href="mailto:alperenkolat@outlook.com?subject=LetterMeteor%20Gizlilik%20Sorusu&body=Merhaba,%0A%0ALetterMeteor%20gizlilik%20politikasi%20ile%20ilgili%20sorum:%0A%0A">Gizlilik Sorusu Gönder</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="section">
+        <h2>Toplanan Veriler</h2>
+        <div class="card-list">
+          <div class="item">
+            <strong>Kişisel hesap verisi</strong>
+            <span>Mevcut build’de hesap oluşturma veya kullanıcı profili toplama akışı yoktur.</span>
+          </div>
+          <div class="item">
+            <strong>Takip</strong>
+            <span>Çapraz uygulama takip davranışı veya reklam kimliği odaklı bir kullanım gözlenmemiştir.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="section">
+        <h2>Uygulama Davranışı</h2>
+        <div class="card-list">
+          <div class="item">
+            <strong>Yerel oyun verileri</strong>
+            <span>Skor, coin, seviye, seri ve istatistikler cihaz üzerinde yerel olarak tutulur.</span>
+          </div>
+          <div class="item">
+            <strong>Kelime doğrulama</strong>
+            <span>Kelime kontrolü uygulama paketindeki kelime listesi ile yapılır; oynanış için çevrim içi doğrulama gerekmez.</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="section full">
+        <h2>Üçüncü Taraf Servisler ve Güncellemeler</h2>
+        <div class="card-list">
+          <div class="item">
+            <strong>Üçüncü taraf SDK durumu</strong>
+            <span>Mevcut kod tabanında analitik, reklam veya harici oturum açma SDK’sı gözlenmemiştir. Uygulama davranışı ileride değişirse bu politika ve App Store gizlilik alanları da güncellenmelidir.</span>
+          </div>
+          <div class="item">
+            <strong>İletişim</strong>
+            <span>E-posta adresi açık metin olarak gösterilmez. Destek veya gizlilik soruları için ilgili butonlar hazır konu satırıyla mail uygulamasını açar.</span>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <p class="footer">Bu politika, yayınlanan üretim davranışı ile App Store Connect içeriği eşlenerek final kontrol edilmelidir.</p>
+  </main>
+</body>
+</html>

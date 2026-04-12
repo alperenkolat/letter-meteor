@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LetterMeteor</title>
+  <meta name="description" content="LetterMeteor resmi bilgi sayfası. Destek, gizlilik ve ürün özeti burada yer alır.">
+  <style>
+    :root {
+      --bg: #08111d;
+      --panel: rgba(17, 25, 39, 0.92);
+      --panel-soft: rgba(255,255,255,0.05);
+      --text: #eef4ff;
+      --muted: #adbbd3;
+      --line: rgba(255,255,255,0.09);
+      --blue: #2e88ff;
+      --gold: #ffd256;
+      --pink: #ff4fa2;
+      --teal: #34d2b1;
+      --shadow: 0 28px 80px rgba(0,0,0,0.34);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(46,136,255,0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(255,79,162,0.12), transparent 24%),
+        radial-gradient(circle at bottom center, rgba(52,210,177,0.12), transparent 24%),
+        linear-gradient(180deg, #07101a 0%, var(--bg) 100%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 28px 18px 80px;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .meteor {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), #ff8a00);
+      box-shadow: 0 0 0 6px rgba(255,210,86,0.10);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link,
+    .button,
+    .button-secondary {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 16px;
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.88);
+      font-weight: 700;
+      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+    }
+
+    .nav-link:hover,
+    .button:hover,
+    .button-secondary:hover {
+      transform: translateY(-1px);
+      border-color: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .button {
+      background: linear-gradient(180deg, rgba(46,136,255,0.22), rgba(46,136,255,0.10));
+      border-color: rgba(46,136,255,0.34);
+    }
+
+    .hero,
+    .section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 30px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 30px;
+      margin-bottom: 18px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 84% 14%, rgba(255,210,86,0.14), transparent 16%),
+        radial-gradient(circle at 15% 0%, rgba(46,136,255,0.20), transparent 24%);
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.72);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p {
+      margin: 0;
+    }
+
+    h1 {
+      margin-top: 16px;
+      font-size: clamp(36px, 7vw, 68px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      max-width: 760px;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin-top: 16px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-size: 17px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .hero-strip {
+      display: flex;
+      gap: 12px;
+      margin-top: 26px;
+      flex-wrap: wrap;
+    }
+
+    .tile {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      position: relative;
+      box-shadow: inset 0 -6px 0 rgba(0,0,0,0.12);
+    }
+
+    .tile small {
+      position: absolute;
+      right: 8px;
+      bottom: 7px;
+      font-size: 11px;
+      font-weight: 800;
+      color: rgba(0,0,0,0.68);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+    }
+
+    .section {
+      padding: 22px;
+    }
+
+    .section h2 {
+      font-size: 14px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.58);
+      margin-bottom: 14px;
+    }
+
+    .list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .item {
+      padding: 14px 16px;
+      border-radius: 18px;
+      background: var(--panel-soft);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .item strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 15px;
+    }
+
+    .item span,
+    .muted {
+      color: var(--muted);
+      line-height: 1.68;
+      font-size: 14px;
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: rgba(255,255,255,0.46);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero,
+      .section {
+        border-radius: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="nav" aria-label="Site">
+      <a class="brand" href="./index.html">
+        <span class="meteor" aria-hidden="true"></span>
+        <span>LetterMeteor</span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" href="./support.html">Destek</a>
+        <a class="nav-link" href="./privacy.html">Gizlilik</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="eyebrow">Türkçe Kelime Arcade</div>
+      <h1>Harfler yükselmeden kelimeyi kur.</h1>
+      <p>LetterMeteor, düşen harf kutuları arasında hızlı karar verdiğin iPhone odaklı bir Türkçe kelime oyunudur. Geçerli kelimeleri zamanında gönder, alanı açık tut ve skorunu büyüt.</p>
+      <div class="hero-actions">
+        <a class="button" href="./support.html">Destek Al</a>
+        <a class="button-secondary" href="./privacy.html">Gizlilik Politikası</a>
+      </div>
+      <div class="hero-strip" aria-hidden="true">
+        <div class="tile" style="background:#3d8bff;">O<small>6</small></div>
+        <div class="tile" style="background:#28bda3;">Y<small>4</small></div>
+        <div class="tile" style="background:#5dc94f;">U<small>4</small></div>
+        <div class="tile" style="background:#ff8b2a;">N<small>2</small></div>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="section">
+        <h2>Oyun Özeti</h2>
+        <div class="list">
+          <div class="item">
+            <strong>Gerçek zamanlı tempo</strong>
+            <span>Harf kutuları sahada birikirken doğru anda gönderim yapmak gerekir.</span>
+          </div>
+          <div class="item">
+            <strong>En az 4 harf kuralı</strong>
+            <span>Gönderilen seçimin geçerli sayılması için hem Türkçe kelime listesinde bulunması hem de en az 4 harf olması gerekir.</span>
+          </div>
+          <div class="item">
+            <strong>Yerel ilerleme</strong>
+            <span>Coin, XP, seviye, seri, kelime hazinesi ve en iyi turlar cihaz üzerinde tutulur.</span>
+          </div>
+        </div>
+      </article>
+
+      <aside class="section">
+        <h2>Bağlantılar</h2>
+        <div class="list">
+          <div class="item">
+            <strong>Destek</strong>
+            <span>Hata bildirimi veya soru göndermek için destek sayfasını kullan.</span>
+          </div>
+          <div class="item">
+            <strong>Gizlilik</strong>
+            <span>Uygulamanın veri kullanımı ve App Store gizlilik yaklaşımı burada özetlenir.</span>
+          </div>
+        </div>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+          <a class="button" href="./support.html">Destek Sayfası</a>
+          <a class="button-secondary" href="./privacy.html">Gizlilik Sayfası</a>
+        </div>
+      </aside>
+    </section>
+
+    <p class="footer">LetterMeteor için resmi bilgi, destek ve gizlilik giriş sayfası.</p>
+  </main>
+</body>
+</html>
