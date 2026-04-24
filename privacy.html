@@ -245,7 +245,7 @@
     <section class="hero">
       <div class="eyebrow">Gizlilik</div>
       <h1>Veri kullanımını sade ve şeffaf tutuyoruz</h1>
-      <p>LetterMeteor şu an tek oyunculu, iPhone odaklı bir kelime oyunudur. Mevcut uygulama davranışına göre hesap oluşturma, reklam takibi veya üçüncü taraf kullanıcı profilleme akışı içermez.</p>
+      <p>LetterMeteor şu an tek oyunculu, iPhone odaklı bir kelime oyunudur. Mevcut uygulama davranışına göre hesap oluşturma, reklam, ödeme, konum izni veya çapraz uygulama takip akışı içermez.</p>
       <div class="hero-actions">
         <a class="button" href="./support.html">Destek Sayfası</a>
         <a class="button-secondary" href="mailto:alperenkolat@outlook.com?subject=LetterMeteor%20Gizlilik%20Sorusu&body=Merhaba,%0A%0ALetterMeteor%20gizlilik%20politikasi%20ile%20ilgili%20sorum:%0A%0A">Gizlilik Sorusu Gönder</a>
@@ -258,11 +258,15 @@
         <div class="card-list">
           <div class="item">
             <strong>Kişisel hesap verisi</strong>
-            <span>Mevcut build’de hesap oluşturma veya kullanıcı profili toplama akışı yoktur.</span>
+            <span>Mevcut build’de hesap oluşturma, giriş yapma veya kişisel kullanıcı profili oluşturma akışı yoktur.</span>
           </div>
           <div class="item">
             <strong>Takip</strong>
-            <span>Çapraz uygulama takip davranışı veya reklam kimliği odaklı bir kullanım gözlenmemiştir.</span>
+            <span>Çapraz uygulama takip, reklam hedefleme veya veri broker’ı ile paylaşım yapılmaz.</span>
+          </div>
+          <div class="item">
+            <strong>Analitik verileri</strong>
+            <span>Uygulama açılışı, oturum süresi, ekran ve özellik etkileşimleri, mod seçimi, hedef ilerlemesi, mağaza, paylaşım ve leaderboard etkileşimleri gibi kullanım sinyalleri Firebase Analytics ile ölçülebilir.</span>
           </div>
         </div>
       </article>
@@ -272,11 +276,15 @@
         <div class="card-list">
           <div class="item">
             <strong>Yerel oyun verileri</strong>
-            <span>Skor, coin, seviye, seri ve istatistikler cihaz üzerinde yerel olarak tutulur.</span>
+            <span>Skor, coin, seviye, seri, hedef ilerlemesi ve istatistiklerin oyun içi kaydı cihaz üzerinde yerel olarak tutulur.</span>
           </div>
           <div class="item">
             <strong>Kelime doğrulama</strong>
             <span>Kelime kontrolü uygulama paketindeki kelime listesi ile yapılır; oynanış için çevrim içi doğrulama gerekmez.</span>
+          </div>
+          <div class="item">
+            <strong>Kullanılmayan veri alanları</strong>
+            <span>Uygulama konum, kişi listesi, kamera, mikrofon, fotoğraf arşivi, ödeme bilgisi veya satış geçmişi toplamak için bir akış içermez.</span>
           </div>
         </div>
       </article>
@@ -285,8 +293,12 @@
         <h2>Üçüncü Taraf Servisler ve Güncellemeler</h2>
         <div class="card-list">
           <div class="item">
-            <strong>Üçüncü taraf SDK durumu</strong>
-            <span>Mevcut kod tabanında analitik, reklam veya harici oturum açma SDK’sı gözlenmemiştir. Uygulama davranışı ileride değişirse bu politika ve App Store gizlilik alanları da güncellenmelidir.</span>
+            <strong>Firebase Analytics</strong>
+            <span>Mevcut build Firebase Analytics kullanır. Firebase, analitik ve ürün kalitesi amacıyla uygulama örneği tanımlayıcısı, cihaz/işletim sistemi bilgileri, oturum ve ürün etkileşimi gibi verileri işleyebilir.</span>
+          </div>
+          <div class="item">
+            <strong>Reklam ve harici giriş</strong>
+            <span>Mevcut build’de AdMob, reklam ağı, üçüncü taraf giriş sistemi, Firebase Auth, Crashlytics, Remote Config veya Messaging akışı kullanılmaz.</span>
           </div>
           <div class="item">
             <strong>İletişim</strong>
