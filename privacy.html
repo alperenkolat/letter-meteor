@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LetterMeteor Privacy Policy</title>
-  <meta name="description" content="LetterMeteor privacy policy and data use summary.">
+  <title>LetterMeteor</title>
+  <meta name="description" content="LetterMeteor official information page with product summary, support, and privacy details.">
   <style>
     :root {
-      --bg: #f3f7fb;
-      --panel: rgba(255,255,255,0.94);
-      --text: #182235;
-      --muted: #516079;
-      --line: rgba(24,34,53,0.10);
-      --blue: #1976ff;
-      --teal: #0f9d8b;
-      --gold: #f5b700;
-      --shadow: 0 24px 60px rgba(18,34,53,0.10);
+      --bg: #08111d;
+      --panel: rgba(17, 25, 39, 0.92);
+      --panel-soft: rgba(255,255,255,0.05);
+      --text: #eef4ff;
+      --muted: #adbbd3;
+      --line: rgba(255,255,255,0.09);
+      --blue: #2e88ff;
+      --gold: #ffd256;
+      --pink: #ff4fa2;
+      --teal: #34d2b1;
+      --shadow: 0 28px 80px rgba(0,0,0,0.34);
     }
 
     * { box-sizing: border-box; }
@@ -25,9 +27,10 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(25,118,255,0.10), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(15,157,139,0.10), transparent 24%),
-        linear-gradient(180deg, #f7fbff 0%, var(--bg) 100%);
+        radial-gradient(circle at top left, rgba(46,136,255,0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(255,79,162,0.12), transparent 24%),
+        radial-gradient(circle at bottom center, rgba(52,210,177,0.12), transparent 24%),
+        linear-gradient(180deg, #07101a 0%, var(--bg) 100%);
     }
 
     a {
@@ -36,9 +39,9 @@
     }
 
     .shell {
-      max-width: 980px;
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 28px 18px 72px;
+      padding: 28px 18px 80px;
     }
 
     .nav {
@@ -56,7 +59,7 @@
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(24,34,53,0.86);
+      color: rgba(255,255,255,0.92);
     }
 
     .meteor {
@@ -64,7 +67,7 @@
       height: 12px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--gold), #ff8a00);
-      box-shadow: 0 0 0 6px rgba(245,183,0,0.12);
+      box-shadow: 0 0 0 6px rgba(255,210,86,0.10);
     }
 
     .nav-links {
@@ -79,8 +82,8 @@
       border: 1px solid var(--line);
       border-radius: 14px;
       padding: 12px 16px;
-      background: rgba(255,255,255,0.72);
-      color: rgba(24,34,53,0.88);
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.88);
       font-weight: 700;
       transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
     }
@@ -89,24 +92,29 @@
     .button:hover,
     .button-secondary:hover {
       transform: translateY(-1px);
-      border-color: rgba(24,34,53,0.16);
-      background: #fff;
+      border-color: rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .button {
+      background: linear-gradient(180deg, rgba(46,136,255,0.22), rgba(46,136,255,0.10));
+      border-color: rgba(46,136,255,0.34);
     }
 
     .hero,
     .section {
       background: var(--panel);
       border: 1px solid var(--line);
-      border-radius: 28px;
+      border-radius: 30px;
       box-shadow: var(--shadow);
       backdrop-filter: blur(10px);
     }
 
     .hero {
-      padding: 28px;
-      margin-bottom: 18px;
       position: relative;
       overflow: hidden;
+      padding: 30px;
+      margin-bottom: 18px;
     }
 
     .hero::before {
@@ -114,8 +122,8 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 88% 18%, rgba(25,118,255,0.08), transparent 20%),
-        radial-gradient(circle at 0% 0%, rgba(15,157,139,0.10), transparent 22%);
+        radial-gradient(circle at 84% 14%, rgba(255,210,86,0.14), transparent 16%),
+        radial-gradient(circle at 15% 0%, rgba(46,136,255,0.20), transparent 24%);
       pointer-events: none;
     }
 
@@ -125,47 +133,74 @@
       gap: 8px;
       padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(24,34,53,0.05);
-      border: 1px solid rgba(24,34,53,0.08);
-      color: rgba(24,34,53,0.56);
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.72);
       font-size: 12px;
       font-weight: 800;
       letter-spacing: 0.08em;
       text-transform: uppercase;
     }
 
-    h1, h2, h3, p { margin: 0; }
+    h1, h2, h3, p {
+      margin: 0;
+    }
 
     h1 {
       margin-top: 16px;
-      font-size: clamp(30px, 6vw, 50px);
-      line-height: 0.98;
-      letter-spacing: -0.03em;
+      font-size: clamp(36px, 7vw, 68px);
+      line-height: 0.95;
+      letter-spacing: -0.04em;
+      max-width: 760px;
     }
 
     .hero p {
-      max-width: 740px;
-      margin-top: 14px;
+      max-width: 720px;
+      margin-top: 16px;
       color: var(--muted);
       line-height: 1.75;
-      font-size: 16px;
+      font-size: 17px;
     }
 
     .hero-actions {
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-top: 22px;
+      margin-top: 24px;
     }
 
-    .button {
-      background: linear-gradient(180deg, rgba(25,118,255,0.10), rgba(25,118,255,0.05));
-      border-color: rgba(25,118,255,0.18);
+    .hero-strip {
+      display: flex;
+      gap: 12px;
+      margin-top: 26px;
+      flex-wrap: wrap;
+    }
+
+    .tile {
+      width: 62px;
+      height: 62px;
+      border-radius: 18px;
+      display: grid;
+      place-items: center;
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      position: relative;
+      box-shadow: inset 0 -6px 0 rgba(0,0,0,0.12);
+    }
+
+    .tile small {
+      position: absolute;
+      right: 8px;
+      bottom: 7px;
+      font-size: 11px;
+      font-weight: 800;
+      color: rgba(0,0,0,0.68);
     }
 
     .grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.1fr 0.9fr;
       gap: 18px;
     }
 
@@ -177,11 +212,11 @@
       font-size: 14px;
       letter-spacing: 0.08em;
       text-transform: uppercase;
-      color: rgba(24,34,53,0.52);
-      margin-bottom: 12px;
+      color: rgba(255,255,255,0.58);
+      margin-bottom: 14px;
     }
 
-    .card-list {
+    .list {
       display: grid;
       gap: 12px;
     }
@@ -189,8 +224,8 @@
     .item {
       padding: 14px 16px;
       border-radius: 18px;
-      background: rgba(24,34,53,0.03);
-      border: 1px solid rgba(24,34,53,0.06);
+      background: var(--panel-soft);
+      border: 1px solid rgba(255,255,255,0.06);
     }
 
     .item strong {
@@ -202,17 +237,13 @@
     .item span,
     .muted {
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.68;
       font-size: 14px;
-    }
-
-    .full {
-      grid-column: 1 / -1;
     }
 
     .footer {
       margin-top: 18px;
-      color: rgba(24,34,53,0.46);
+      color: rgba(255,255,255,0.46);
       font-size: 13px;
       text-align: center;
     }
@@ -226,6 +257,11 @@
         flex-direction: column;
         align-items: stretch;
       }
+
+      .hero,
+      .section {
+        border-radius: 24px;
+      }
     }
   </style>
 </head>
@@ -237,78 +273,66 @@
         <span>LetterMeteor</span>
       </a>
       <div class="nav-links">
-        <a class="nav-link" href="./index.html">Home</a>
         <a class="nav-link" href="./support.html">Support</a>
+        <a class="nav-link" href="./privacy.html">Privacy</a>
       </div>
     </nav>
 
     <section class="hero">
-      <div class="eyebrow">Privacy</div>
-      <h1>Data use stays simple and transparent</h1>
-      <p>LetterMeteor is a single-player, iPhone-first word game. The current app behavior does not include account creation, ads, payment processing, location permission, or cross-app tracking.</p>
+      <div class="eyebrow">Fast Word Arcade</div>
+      <h1>Build words before the stack rises.</h1>
+      <p>LetterMeteor is an iPhone-first word arcade game where falling letter tiles keep the pressure high. Submit valid words in time, keep the board open, and chase a stronger score every run.</p>
       <div class="hero-actions">
-        <a class="button" href="./support.html">Support Page</a>
-        <a class="button-secondary" href="mailto:alperenkolat@outlook.com?subject=LetterMeteor%20Privacy%20Question&body=Hello,%0A%0AMy%20LetterMeteor%20privacy%20question:%0A%0A">Send Privacy Question</a>
+        <a class="button" href="./support.html">Get Support</a>
+        <a class="button-secondary" href="./privacy.html">Privacy Policy</a>
+      </div>
+      <div class="hero-strip" aria-hidden="true">
+        <div class="tile" style="background:#3d8bff;">G<small>2</small></div>
+        <div class="tile" style="background:#28bda3;">A<small>1</small></div>
+        <div class="tile" style="background:#5dc94f;">M<small>3</small></div>
+        <div class="tile" style="background:#ff8b2a;">E<small>1</small></div>
       </div>
     </section>
 
     <section class="grid">
       <article class="section">
-        <h2>Data Collection</h2>
-        <div class="card-list">
+        <h2>Game Summary</h2>
+        <div class="list">
           <div class="item">
-            <strong>Personal account data</strong>
-            <span>The current build has no account creation, sign-in, or personal profile flow.</span>
+            <strong>Real-time pace</strong>
+            <span>Letter tiles stack on the board, so every valid submission has to land before space runs out.</span>
           </div>
           <div class="item">
-            <strong>Tracking</strong>
-            <span>The app does not use cross-app tracking, ad targeting, or data broker sharing.</span>
+            <strong>4+ letter rule</strong>
+            <span>A submitted word must be at least 4 letters and must exist in the bundled word list for the active language.</span>
           </div>
           <div class="item">
-            <strong>Analytics data</strong>
-            <span>Usage signals such as app launches, session duration, screen and feature interactions, mode selection, goal progress, store, sharing, and leaderboard interactions may be measured with Firebase Analytics.</span>
-          </div>
-        </div>
-      </article>
-
-      <article class="section">
-        <h2>App Behavior</h2>
-        <div class="card-list">
-          <div class="item">
-            <strong>Local gameplay data</strong>
-            <span>Score, coins, level, streak, goal progress, and in-game statistics are stored locally on device.</span>
-          </div>
-          <div class="item">
-            <strong>Word validation</strong>
-            <span>Word checks are performed on device with bundled word lists. English UI uses the English list, and Turkish UI uses the Turkish list; online validation is not required for gameplay.</span>
-          </div>
-          <div class="item">
-            <strong>Data areas not used</strong>
-            <span>The app does not include flows to collect location, contacts, camera, microphone, photo library, payment information, or purchase history.</span>
+            <strong>Local progress</strong>
+            <span>Coins, XP, levels, streaks, vocabulary stats, and best runs are stored on device.</span>
           </div>
         </div>
       </article>
 
-      <article class="section full">
-        <h2>Third-Party Services And Updates</h2>
-        <div class="card-list">
+      <aside class="section">
+        <h2>Links</h2>
+        <div class="list">
           <div class="item">
-            <strong>Firebase Analytics</strong>
-            <span>The current build uses Firebase Analytics. Firebase may process data such as app-instance identifiers, device and operating system information, session data, and product interaction signals for analytics and product quality.</span>
+            <strong>Support</strong>
+            <span>Use the support page for bug reports, gameplay questions, or App Store support requests.</span>
           </div>
           <div class="item">
-            <strong>Ads and external sign-in</strong>
-            <span>The current build does not use AdMob, ad networks, third-party sign-in, Firebase Auth, Crashlytics, Remote Config, or Messaging flows.</span>
-          </div>
-          <div class="item">
-            <strong>Contact</strong>
-            <span>Support and privacy buttons open the mail app with prepared subject lines.</span>
+            <strong>Privacy</strong>
+            <span>Review the app's data use, bundled word validation, and App Store privacy notes.</span>
           </div>
         </div>
-      </article>
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+          <a class="button" href="./support.html">Support Page</a>
+          <a class="button-secondary" href="./privacy.html">Privacy Page</a>
+        </div>
+      </aside>
     </section>
 
-    <p class="footer">This policy should be checked against the shipped production behavior and App Store Connect privacy answers.</p>
+    <p class="footer">Official information, support, and privacy page for LetterMeteor.</p>
   </main>
 </body>
 </html>
