@@ -1,317 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LetterMeteor Support</title>
   <meta name="description" content="Support, help, and contact page for the LetterMeteor iPhone word game.">
-  <style>
-    :root {
-      --bg: #0a101b;
-      --panel: rgba(18, 26, 40, 0.92);
-      --panel-strong: #111a2a;
-      --text: #eef4ff;
-      --muted: #aebcd5;
-      --line: rgba(255,255,255,0.09);
-      --blue: #2e88ff;
-      --gold: #ffd256;
-      --teal: #34d2b1;
-      --shadow: 0 24px 70px rgba(0,0,0,0.28);
-    }
-
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(46,136,255,0.18), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(52,210,177,0.14), transparent 28%),
-        linear-gradient(180deg, #08111d 0%, var(--bg) 100%);
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .shell {
-      max-width: 980px;
-      margin: 0 auto;
-      padding: 28px 18px 72px;
-    }
-
-    .nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.92);
-    }
-
-    .meteor {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--gold), #ff9f1a);
-      box-shadow: 0 0 0 6px rgba(255,210,86,0.10);
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .nav-link,
-    .button,
-    .button-secondary {
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 12px 16px;
-      background: rgba(255,255,255,0.04);
-      color: rgba(255,255,255,0.88);
-      font-weight: 700;
-      transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
-    }
-
-    .nav-link:hover,
-    .button:hover,
-    .button-secondary:hover {
-      transform: translateY(-1px);
-      border-color: rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.07);
-    }
-
-    .hero,
-    .section {
-      background: var(--panel);
-      border: 1px solid var(--line);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      backdrop-filter: blur(10px);
-    }
-
-    .hero {
-      overflow: hidden;
-      position: relative;
-      padding: 28px;
-      margin-bottom: 18px;
-    }
-
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(255,210,86,0.16), transparent 18%),
-        radial-gradient(circle at 10% 0%, rgba(46,136,255,0.18), transparent 24%);
-      pointer-events: none;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.10);
-      color: rgba(255,255,255,0.72);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    h1, h2, h3, p {
-      margin: 0;
-    }
-
-    h1 {
-      margin-top: 16px;
-      font-size: clamp(32px, 6vw, 54px);
-      line-height: 0.98;
-      letter-spacing: -0.03em;
-    }
-
-    .hero p {
-      max-width: 700px;
-      margin-top: 14px;
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 16px;
-    }
-
-    .hero-actions {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-top: 22px;
-    }
-
-    .button {
-      background: linear-gradient(180deg, rgba(46,136,255,0.22), rgba(46,136,255,0.10));
-      border-color: rgba(46,136,255,0.34);
-    }
-
-    .button-secondary {
-      background: rgba(255,255,255,0.04);
-    }
-
-    .grid {
-      display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 18px;
-    }
-
-    .section {
-      padding: 22px;
-    }
-
-    .section h2 {
-      font-size: 14px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: rgba(255,255,255,0.62);
-      margin-bottom: 14px;
-    }
-
-    .topics,
-    .notes {
-      display: grid;
-      gap: 12px;
-    }
-
-    .item {
-      padding: 14px 16px;
-      border-radius: 18px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .item strong {
-      display: block;
-      margin-bottom: 4px;
-      font-size: 15px;
-    }
-
-    .item span,
-    .muted {
-      color: var(--muted);
-      line-height: 1.65;
-      font-size: 14px;
-    }
-
-    .cta-box {
-      padding: 18px;
-      border-radius: 22px;
-      background: linear-gradient(180deg, rgba(255,210,86,0.12), rgba(255,210,86,0.04));
-      border: 1px solid rgba(255,210,86,0.18);
-      margin-top: 14px;
-    }
-
-    .footer {
-      margin-top: 18px;
-      color: rgba(255,255,255,0.48);
-      font-size: 13px;
-      text-align: center;
-    }
-
-    @media (max-width: 760px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero,
-      .section {
-        border-radius: 24px;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: stretch;
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            meteor: {
+              bg: '#0A0A0F',
+              panel: '#12121A',
+              soft: '#1A1A24',
+              blue: '#4D9EFF',
+              gold: '#FFB800',
+              green: '#00C47A'
+            }
+          },
+          boxShadow: {
+            soft: '0 24px 70px rgba(0, 0, 0, 0.35)',
+            blue: '0 18px 50px rgba(77, 158, 255, 0.22)'
+          },
+          fontFamily: {
+            sans: ['-apple-system', 'BlinkMacSystemFont', 'SF Pro Display', 'SF Pro Text', 'Inter', 'sans-serif']
+          }
+        }
       }
     }
-  </style>
+  </script>
 </head>
-<body>
-  <main class="shell">
-    <nav class="nav" aria-label="Site">
-      <a class="brand" href="./index.html">
-        <span class="meteor" aria-hidden="true"></span>
-        <span>LetterMeteor</span>
-      </a>
-      <div class="nav-links">
-        <a class="nav-link" href="./index.html">Home</a>
-        <a class="nav-link" href="./privacy.html">Privacy</a>
-      </div>
-    </nav>
+<body class="bg-meteor-bg text-white antialiased">
+  <main class="min-h-screen overflow-hidden">
+    <section class="relative px-5 pt-6 pb-14 sm:px-8 lg:px-12">
+      <div class="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_18%_0%,rgba(77,158,255,.22),transparent_30%),radial-gradient(circle_at_86%_16%,rgba(0,196,122,.14),transparent_24%),linear-gradient(180deg,#0A0A0F_0%,#0D0D14_100%)]"></div>
 
-    <section class="hero">
-      <div class="eyebrow">Support</div>
-      <h1>Need help with LetterMeteor?</h1>
-      <p>Use this page to send bug reports, gameplay questions, word-list feedback, or App Store support requests for LetterMeteor.</p>
-      <div class="hero-actions">
-        <a class="button" href="mailto:alperenkolat@outlook.com?subject=LetterMeteor%20Support&body=Hello,%0A%0AMy%20LetterMeteor%20support%20request:%0A-%20Device:%0A-%20iOS%20version:%0A-%20Issue%20details:%0A%0AThank%20you.">Send Message</a>
-        <a class="button-secondary" href="./privacy.html">Privacy Policy</a>
+      <nav class="mx-auto flex max-w-6xl items-center justify-between gap-4">
+        <a href="./index.html" class="flex items-center gap-3" aria-label="LetterMeteor home">
+          <span class="grid h-9 w-9 place-items-center rounded-2xl bg-white/[0.08] ring-1 ring-white/10">
+            <span class="h-3 w-3 rounded-full bg-meteor-gold shadow-[0_0_24px_rgba(255,184,0,.7)]"></span>
+          </span>
+          <span class="text-sm font-semibold tracking-wide text-white/[0.90]">LetterMeteor</span>
+        </a>
+        <div class="flex items-center gap-2">
+          <a href="./index.html" class="rounded-full border border-white/[0.12] bg-white/[0.08] px-4 py-2 text-sm font-semibold text-white/[0.88] transition hover:bg-white/[0.12]">Home</a>
+          <a href="./privacy.html" class="rounded-full border border-white/[0.12] bg-white/[0.08] px-4 py-2 text-sm font-semibold text-white/[0.88] transition hover:bg-white/[0.12]">Privacy</a>
+        </div>
+      </nav>
+
+      <div class="mx-auto max-w-6xl pt-16 lg:pt-24">
+        <p class="mb-5 inline-flex rounded-full border border-meteor-green/25 bg-meteor-green/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-meteor-green">Support</p>
+        <h1 class="max-w-3xl text-5xl font-semibold leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">Need help with LetterMeteor?</h1>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/[0.68]">Send bug reports, gameplay questions, word-list feedback, or App Store support requests. A few details make support faster and more useful.</p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a href="mailto:alperenkolat@outlook.com?subject=LetterMeteor%20Support&body=Hello,%0A%0AMy%20LetterMeteor%20support%20request:%0A-%20Device:%0A-%20iOS%20version:%0A-%20Gameplay%20language:%0A-%20Issue%20details:%0A%0AThank%20you." class="inline-flex items-center justify-center rounded-full bg-white px-6 py-4 text-base font-semibold text-black shadow-blue transition hover:scale-[1.01]">Send Message</a>
+          <a href="./privacy.html" class="inline-flex items-center justify-center rounded-full border border-white/[0.12] bg-white/[0.08] px-6 py-4 text-base font-semibold text-white/[0.88] transition hover:bg-white/[0.12]">Privacy Policy</a>
+        </div>
       </div>
     </section>
 
-    <section class="grid">
-      <article class="section">
-        <h2>Support Topics</h2>
-        <div class="topics">
-          <div class="item">
-            <strong>App does not open or closes unexpectedly</strong>
-            <span>Send details about launch freezes, black screens, or unexpected crashes.</span>
+    <section class="px-5 py-14 sm:px-8 lg:px-12">
+      <div class="mx-auto grid max-w-6xl gap-4 lg:grid-cols-[1.1fr_.9fr]">
+        <article class="rounded-[2rem] border border-white/10 bg-meteor-panel p-6 shadow-soft sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-white/[0.45]">Support Topics</p>
+          <div class="mt-6 grid gap-3">
+            <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+              <h2 class="font-semibold">App does not open or closes unexpectedly</h2>
+              <p class="mt-2 leading-7 text-white/[0.62]">Send details about launch freezes, black screens, or unexpected crashes.</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+              <h2 class="font-semibold">Word validation feedback</h2>
+              <p class="mt-2 leading-7 text-white/[0.62]">If a word you expect to be valid is rejected, share the word and your gameplay language.</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+              <h2 class="font-semibold">Score, coins, or statistics issue</h2>
+              <p class="mt-2 leading-7 text-white/[0.62]">Send details if score, coins, level progress, or stats behave unexpectedly.</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+              <h2 class="font-semibold">Device compatibility and accessibility</h2>
+              <p class="mt-2 leading-7 text-white/[0.62]">Report interface or gameplay issues on a specific iPhone model.</p>
+            </div>
           </div>
-          <div class="item">
-            <strong>Word validation feedback</strong>
-            <span>If a word you expect to be valid is rejected, share the word and your gameplay language.</span>
-          </div>
-          <div class="item">
-            <strong>Score, coins, or statistics issue</strong>
-            <span>Send details if score, coins, level progress, or stats behave unexpectedly.</span>
-          </div>
-          <div class="item">
-            <strong>Device compatibility and accessibility</strong>
-            <span>Report interface or gameplay issues on a specific iPhone model.</span>
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <aside class="section">
-        <h2>Quick Notes</h2>
-        <div class="notes">
-          <div class="item">
-            <strong>Helpful for replies</strong>
-            <span>Device model, iOS version, gameplay language, and a short screenshot description help speed up support.</span>
+        <aside class="rounded-[2rem] border border-white/10 bg-meteor-panel p-6 shadow-soft sm:p-8">
+          <p class="text-sm font-semibold uppercase tracking-[0.18em] text-white/[0.45]">Quick Notes</p>
+          <div class="mt-6 grid gap-3">
+            <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+              <h2 class="font-semibold text-meteor-blue">Helpful for replies</h2>
+              <p class="mt-2 leading-7 text-white/[0.62]">Device model, iOS version, gameplay language, and a short description help speed up support.</p>
+            </div>
+            <div class="rounded-3xl border border-white/10 bg-white/[0.04] p-5">
+              <h2 class="font-semibold text-meteor-gold">Gameplay rule</h2>
+              <p class="mt-2 leading-7 text-white/[0.62]">A valid submission needs at least 4 letters and is checked against the bundled word list for the active language.</p>
+            </div>
+            <div class="rounded-3xl border border-meteor-green/20 bg-meteor-green/10 p-5">
+              <h2 class="font-semibold text-meteor-green">Direct contact</h2>
+              <p class="mt-2 leading-7 text-white/[0.68]">The message button opens your mail app with a prepared subject line.</p>
+            </div>
           </div>
-          <div class="item">
-            <strong>Gameplay rule</strong>
-            <span>A valid submission needs at least 4 letters and is checked against the bundled word list for the active language.</span>
-          </div>
-        </div>
-        <div class="cta-box">
-          <strong style="display:block; margin-bottom:6px;">Direct contact</strong>
-          <p class="muted">The message button opens your mail app with a prepared subject line.</p>
-        </div>
-      </aside>
+        </aside>
+      </div>
     </section>
 
-    <p class="footer">Official support page for the LetterMeteor iPhone word game.</p>
+    <footer class="px-5 pb-10 text-center text-sm text-white/[0.42] sm:px-8 lg:px-12">
+      Official support page for the LetterMeteor iPhone word game.
+    </footer>
   </main>
 </body>
 </html>
